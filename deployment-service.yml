@@ -1,34 +1,35 @@
-aapiVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: bloggingapp-deployment
-  namespace: webapps
-  labels:
-    app: bloggingapp
 spec:
-  replicas: 2
   selector:
     matchLabels:
       app: bloggingapp
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
+  replicas: 2
   template:
     metadata:
       labels:
         app: bloggingapp
-      annotations:
-        kubectl.kubernetes.io/restartedAt: "2025-05-13T08:41:41Z"
     spec:
       containers:
-      - name: bloggingapp
-        image: ahmedrafat/blogging-app:latest
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 8080
-          protocol: TCP
-      restartPolicy: Always
+        - name: bloggingapp
+          image: ahmedrafat/blogging-app # Updated image to private DockerHub image
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
       imagePullSecrets:
-      - name: regcred
+        - name: regcred # Reference to the Docker registry secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bloggingapp-ssvc
+spec:
+  selector:
+    app: bloggingapp
+  ports:
+    - protocol: "TCP"
+      port: 80
+      targetPort: 8080 
+  type: LoadBalancer
