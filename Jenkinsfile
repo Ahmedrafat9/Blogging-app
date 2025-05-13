@@ -128,6 +128,7 @@ pipeline {
                         <p>Job: ${jobName}</p>
                         <p>Build Number: ${buildNumber}</p>
                         <p>Status: ${pipelineStatus}</p>
+                        <p><a href="${env.BUILD_URL}">View Build</a></p>
                     </div>
                 </body>
                 """
@@ -135,12 +136,12 @@ pipeline {
                 emailext(
                     subject: "${jobName} - Build ${buildNumber} - ${pipelineStatus}",
                     body: body,
-                    to: 'ahmedrafaat456@gmail.com',
+                    to: 'ahmedrafat456@gmail.com',
                     from: 'jenkins@example.com',
                     replyTo: 'jenkins@example.com',
                     mimeType: 'text/html'
                 )
             }
         }
-    }
-}
+    } // <-- Closing brace for the 'post' block
+} // <-- Closing brace for the pipeline block
