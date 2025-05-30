@@ -87,10 +87,6 @@ This project demonstrates a complete **CI/CD pipeline** setup for deploying a fu
    - Prometheus scrapes metrics from the Blackbox Exporter.
    - Grafana visualizes application uptime, health, and other critical metrics.
 
-## Steps to Reproduce the Project
-
-
-
 ```
 ### 1. Clone the Repository
 ```bash
@@ -141,6 +137,13 @@ kubectl apply -f kubernetes/deployment.yml
 - Security-Focused: Static code analysis via SonarQube and vulnerability scans via Trivy ensure high code quality and security.
 
 ## Project Screenshots
+- Appllication running 
+![Screenshot from 2025-05-13 11-55-39](https://github.com/user-attachments/assets/9b505d9f-f341-4028-aeab-a65e69edeb38)
+
+![Screenshot from 2025-05-13 11-56-33](https://github.com/user-attachments/assets/8c778949-5222-42f4-9da5-c32088c6033c)
+
+![Screenshot from 2025-05-13 11-57-46](https://github.com/user-attachments/assets/ba0e465a-39e4-412c-912c-f329bf10ac05)
+
 - Pipeline
 ![Screenshot from 2025-05-30 19-38-45](https://github.com/user-attachments/assets/75bb832d-65e5-4fd0-a4fd-bfb78fff51ad)
 
@@ -149,14 +152,6 @@ kubectl apply -f kubernetes/deployment.yml
 
 - Email from Jenkins : The pipeline success
 ![Screenshot from 2025-05-13 13-16-16](https://github.com/user-attachments/assets/ca0f4397-d0d9-40c2-a467-3423d9834b4c)
-
-
-- Appllication running 
-![Screenshot from 2025-05-13 11-55-39](https://github.com/user-attachments/assets/9b505d9f-f341-4028-aeab-a65e69edeb38)
-
-![Screenshot from 2025-05-13 11-56-33](https://github.com/user-attachments/assets/8c778949-5222-42f4-9da5-c32088c6033c)
-
-![Screenshot from 2025-05-13 11-57-46](https://github.com/user-attachments/assets/ba0e465a-39e4-412c-912c-f329bf10ac05)
 
 - Eks cluster 
 ![Screenshot from 2025-05-30 19-36-56](https://github.com/user-attachments/assets/b8379ba4-a919-4987-922c-b90ff42a1c24)
